@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard de Alumnos</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <p class="subtitulo">SISTEMA DE INFORMACIÓN</p>
+            <h1>Dashboard de Alumnos</h1>
+            <p>Consulta y visualización de registros desde MySQL</p>
+        </div>
+        <span class="estado">API REST</span>
+    </header>
+
+    <main class="contenedor">
+        <section class="resumen">
+            <article class="tarjeta">
+                <p>Total de alumnos</p>
+                <h2 id="total-alumnos">0</h2>
+            </article>
+
+            <article class="tarjeta">
+                <p>Carreras registradas</p>
+                <h2 id="total-carreras">0</h2>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Registros de alumnos</h2>
+            <p class="descripcion">
+                Información obtenida mediante la API REST.
+            </p>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Carrera</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla-datos">
+                        <tr>
+                            <td colspan="3">Cargando datos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Alumnos por carrera</h2>
+            <p class="descripcion">
+                Gráfica generada dinámicamente con Chart.js.
+            </p>
+
+            <div class="grafica-contenedor">
+                <canvas id="miGrafica"></canvas>
+            </div>
+        </section>
+
+        <p id="mensaje" role="status"></p>
+    </main>
+
+    <footer>
+        Práctica 3 · Unidad 2 · Node.js, Express, MySQL y Chart.js
+    </footer>
+</body>
+</html>
